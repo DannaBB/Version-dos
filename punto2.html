@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Punto 2</title>
+  </head>
+  <body>
+    <h1>Punto 2 </h1>
+    <p>Todos los valores a ingresar deben ser numericos </p>
+    <script type="text/javascript">
+    var C = 10;
+    var ME = 0;
+    var MY = 0;
+    var EB = 0;
+    var EA = 0;
+    var P = 0;
+    var Conunt = 0;
+    var array = [];
+    var mayor = 0;
+    var menor =  0;
+    var i =0;
+    while (i<10) {
+      var Edad = prompt("Ingrese la Edad:");
+      if(Edad >= 1 && Edad <= 120){
+        array.push(Edad);
+        i++;
+        if (array.length == 10){
+          array.forEach((item, index)=>{
+          P = P + parseInt(item);
+          if (parseInt(item) < 18) {
+            ME = ME+1;
+          }else{
+            MY = MY+1;
+          }
+          if (parseInt(item) > mayor || mayor == 0){
+            mayor = parseInt(item);
+          }
+           if (parseInt(item) < menor || menor == 0) {
+            menor = parseInt(item);
+          }
+          EA = mayor;
+          EB = menor;
+          });
+      }
+      }else {
+        document.write("Se debe ingresar nuevamente el valor ya que  no es valido");
+      }
+    }
+    document.write("Cantidad Menores de Edad:" + ME+"<br>");
+    document.write("Cantidad Mayores de Edad:" + MY+"<br>");
+    document.write("Edad mas Baja:" + EB+"<br>");
+    document.write("Edad mas Alta:" + EA+"<br>");
+    document.write("Promedio:"+ P/10+"<br>");
+    </script>
+  </body>
+</html>
